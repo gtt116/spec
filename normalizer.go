@@ -173,5 +173,6 @@ func absPath(fname string) (string, error) {
 		return fname, nil
 	}
 	wd, err := os.Getwd()
+	wd = strings.Replace(wd, "#", "%23", -1)
 	return normalizeAbsPath(filepath.Join(wd, fname)), err
 }
